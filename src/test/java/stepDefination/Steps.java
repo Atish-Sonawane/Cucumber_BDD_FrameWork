@@ -118,32 +118,33 @@ public class Steps extends BaseClass {
 	// Customer feature step Definition.............
 	
 	@Then("User can view Dashboard")
-	public void user_can_view_dashboard() {
+	public void user_can_view_Dashboard() {
 		addcust = new AddCustomerPage(driver);
 		Assert.assertEquals(addcust.getPageTitle(), "Dashboard / nopCommerce administration");
 	}
 
-	@When("user click on customer Menu")
-	public void user_click_on_customer_Menu() {
+	@When("User click on customer Menu")
+	public void user_click_on_customer_menu() {
 	    addcust.clickOnCustomerMenu();
 	}
 
-	@When("click on customer menu Item")
-	public void click_on_customer_menu_Item() {
+	@When("click on customer Menu Item")
+	public void click_on_customer_Menu_Item() {
 	    addcust.clickOnCustomerMenuItem();
 	}
 
-	@When("click on add new Button")
+	
+	@When("click on Add new button")
 	public void click_on_add_new_button() {
-	    addcust.clickOnAddNew();
+		addcust.clickOnAddNew();
 	}
 
-	@Then("user can view Add new customer Page")
+	@Then("User can View Add new customer page")
 	public void user_can_view_add_new_customer_page() {
 		Assert.assertEquals(addcust.getPageTitle(), "Add a new customer / nopCommerce administration");
 	}
 
-	@When("user enter customer info")
+	@When("User enter customer info")
 	public void user_enter_customer_info() throws InterruptedException {
 	    logger.info("**************  Adding new Customer ******************");
 	    logger.info("**************  providing customer details ******************");
@@ -161,13 +162,13 @@ public class Steps extends BaseClass {
 	    
 	}
 
-	@When("click on save button")
-	public void click_on_save_button() {
+	@When("click on Save button")
+	public void click_on_Save_button() {
 		logger.info("**************  saving customer data ******************");
 		addcust.clickOnSave();
 	}
 
-	@Then("user can view confirmation message {string}")
+	@Then("User can view confirmation message {string}")
 	public void user_can_view_confirmation_message(String string) {
 	    Assert.assertTrue(driver.findElement(By.tagName("body")).getAccessibleName().contains("The new customer has been added successfully"));
 	}
@@ -176,7 +177,7 @@ public class Steps extends BaseClass {
 	
 	
 	@When("Enter customer EMail")
-	public void enter_customer_e_mail() {
+	public void enter_customer_Email() {
 		logger.info("**************  searching customer by Email ******************");
 		searchcust = new SearchCustomerPage(driver);
 		searchcust.setEmail("victoriya_victoriya@nopCommerce.com");
@@ -187,8 +188,8 @@ public class Steps extends BaseClass {
 	    searchcust.clickSearch();
 	}
 
-	@Then("user should found Email in the Search table")
-	public void user_should_found_email_in_the_search_table() {
+	@Then("User should found Email in the Search table")
+	public void user_should_found_email_in_the_Search_table() {
 	    boolean status = searchcust.searchCustomerByEmail("victoriya_victoriya@nopCommerce.com");
 	    Assert.assertEquals(status, true);
 	}
@@ -196,17 +197,17 @@ public class Steps extends BaseClass {
 	//---------------------------- Steps for searching customer using Name -----------------------------------
 	
 	@When("Enter customer FirstName")
-	public void enter_customer_first_name() {
+	public void enter_customer_firstName() {
 		logger.info("**************  searching customer by Name ******************");
 		searchcust = new SearchCustomerPage(driver);
 		searchcust.setFirstName("victoriya");
 	}
 
 	@When("Enter customer LastName")
-	public void enter_customer_last_name() {
+	public void enter_customer_lastFame() {
 	    searchcust.setLastName("Terces");
 	}
-	@Then("user should found Email in the Search table")
+	@When("user should found Email in the Search table")
 	public void user_should_found_Email_in_the_Search_table() {
 		boolean status = searchcust.searchCustomerByName("Victoria Terces");
 		Assert.assertEquals(status, true);

@@ -9,28 +9,28 @@ Then User can view Dashboard
 
 @sanity
 Scenario: Add a new Customer
-When user click on customer Menu
-And click on customer menu Item
-And click on add new Button
-Then user can view Add new customer Page
-When user enter customer info
-And click on save button
-Then user can view confirmation message "The new customer has been added successfully."
+When User click on customer Menu
+And click on customer Menu Item
+And click on Add new button
+Then User can View Add new customer page
+When User enter customer info
+And click on Save button
+Then User can view confirmation message "The new customer has been added successfully."
 And close browser
 
 @regression
-Scenario: search customer by EmailId
-When user click on customer Menu
-And click on customer menu Item
+Scenario: Search customer by EmailId
+When User click on customer Menu
+And click on customer Menu Item
 And Enter customer EMail
 When Click on search button
-Then user should found Email in the Search table
+Then User should found Email in the Search table
 And close browser
 
 @regression
 Scenario: Search customer by name
-When user click on customer menu
-And click on customer Menu item
+When user click on customer Menu
+And click on customer Menu Item
 And Enter customer FirstName
 And Enter customer LastName
 When Click on search button

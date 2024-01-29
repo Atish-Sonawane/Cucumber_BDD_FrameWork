@@ -14,8 +14,8 @@ public class WaitHelper {
 		this.driver=driver;
 	}
 	
-	public void waitForElement(WebElement element, Duration timeOutInSeconds) { // instead of duration we can use long.
-		WebDriverWait wait = new WebDriverWait(driver,timeOutInSeconds);
+	public void waitForElement(WebElement element, Duration i) { // instead of duration we can use long.
+		WebDriverWait wait = new WebDriverWait(driver,i);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
