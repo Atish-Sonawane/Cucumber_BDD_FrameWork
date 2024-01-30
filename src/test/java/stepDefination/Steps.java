@@ -8,6 +8,8 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 
 import io.cucumber.java.Before; //cucumber.api.java.before.......>need
@@ -43,13 +45,13 @@ public class Steps extends BaseClass {
 		} else if (br.equals("edge")) {
 			// System.setProperty("webdriver.chrome.driver",
 			// configProp.getProperty("edgepath"));
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
 		} else if (br.equals("firefox")) {
 			// System.setProperty("webdriver.chrome.driver",
 			// configProp.getProperty("firefoxpath"));
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
 		}
 		logger.info("*************** Launchimg browser ****************");
 
